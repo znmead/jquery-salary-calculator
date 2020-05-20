@@ -39,4 +39,4 @@ Base | required
 Stretch | optional, stretches your understanding and may require additional research
 
 ## Assignment Submission
-Check in your repo, then turn in your work via the Prime Academy Assignment Application at [http://primeacademy.io](http://primeacademy.io), as usual and don't hesitate to hit up the Slack channel as needed!
+Check in your repo, then turn in your work via the EDA Assignment Portal. As usual, don't hesitate to hit up the Slack channel as needed!
