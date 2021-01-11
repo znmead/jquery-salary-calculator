@@ -3,7 +3,7 @@ $(document).ready(readyNow);
 
 function readyNow() {
     $('#submitButton').on('click', addEmployees); // adds employees to table on "submit" click
-   //  $('#submitButton').on('click', compileSalary); // figures salary to "Montly Total" on click
+    $('#submitButton').on('click', compileSalary); // figures salary to "Montly Total" on click
 };
 
 let employees = [];
@@ -36,4 +36,21 @@ function addEmployees() { // gets values from input boxes
     $('#title').val('');
     $('#salary').val('');
 
+}
+
+function compileSalary() {
+    let monthlySalary = 0;
+    let salaryArray = employees;
+    
+    for (let i = 0; i < salaryArray.length. i++) {
+        monthlySalary += Number(salaryArray[i].salary);
+    }
+
+    monthlySalary /= 12;
+    $("h3").remove();
+    $(".monthlyTotal").append("<h3>Monthly Salary Total:");
+
+    if (monthlySalary >= 20000) {
+        ("h3")
+    }
 }
