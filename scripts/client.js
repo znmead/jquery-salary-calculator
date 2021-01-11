@@ -4,8 +4,8 @@ $(document).ready(readyNow);
 function readyNow() {
     $('#submitButton').on('click', addEmployees); // adds employees to table on "submit" click
     $('#submitButton').on('click', compileSalary); // figures salary to "Monthly Total" on click
-    $('table').on('click', '.delete', removeEmployeeStats); // deletes employee
-    $('table').on('click', '.delete', compileSalary); // recompiles for removed employee
+    $('#deletButton').on('click', '.delete', removeEmployeeStats); // deletes employee
+    $('#deleteButton').on('click', '.delete', compileSalary); // recompiles for removed employee
 
 };
 
@@ -56,7 +56,7 @@ function compileSalary() { // compiles monthly salary
 
     monthlySalary /= 12; // divides annual salary by 12
     $("h3").remove();
-    $(".monthlyTotal").append("<h3>Monthly Salary Total: $" + compileSalary(monthlySalary));
+    $(".monthlyTotal").append("<h3>Monthly Salary Total: $" + compileSalary());
 
     if (monthlySalary >= 20000) {
         ("h3").css("background-color", "red"); // sets background to red if monthly costs exceed $20,000
@@ -67,8 +67,8 @@ function removeEmployeeStats(array, id) {
     for (let i = 0; i < array.length; i++) {
         if (array[i].id === id) {
             employees.splice(i, 1);
-
         }
     }
 }
+
 
