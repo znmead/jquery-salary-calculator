@@ -28,8 +28,8 @@ function addEmployees() { // gets values from input boxes
     <tr><td>${firstName}</td>
     <td>${lastName}</td>
     <td class="id">${id}</td>
-    <td>${title}</td
-    ><td>${salary}</td></tr>`);
+    <td>${title}</td>
+    <td>${salary}</td>`);
     $('.tableBody').append(employeeStats);
 
     let newEmployee = {
@@ -57,10 +57,10 @@ function compileSalary() { // compiles monthly salary
         monthlySalary += Number(salaryArray[i].salary);
     }
     $("h3").remove();
-    $("#monthlyTotal").append("<h3>Monthly Salary Total: $", compileSalary());
+    $("#monthlyTotal").append("<h3>Monthly Salary Total: $");
 
     monthlySalary /= 12; // divides annual salary by 12
-     if (monthlyTotal >= 20000) {
+     if (employees.salary >= 20000) {
         ("h3").css("background-color", "red"); // sets background to red if monthly costs exceed $20,000
     }
 
@@ -74,4 +74,4 @@ function removeEmployeeStats(array, id) {
     }
 }
 
-
+// 
