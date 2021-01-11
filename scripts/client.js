@@ -2,8 +2,8 @@ console.log ('js');
 $(document).ready(readyNow);
 
 function readyNow() {
-    $(#submitButton).on('click', addEmployee);
-    $(#submitButton).on('click', compileSalary);
+    $(#submitButton).on('click', addEmployee); // adds employee to table on "submit" click
+    $(#submitButton).on('click', compileSalary); // figures salary to "Montly Total" on click
 }
 
 let employees = [];
