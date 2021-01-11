@@ -4,8 +4,6 @@ $(document).ready(readyNow);
 function readyNow() {
     $('#submitButton').on('click', addEmployees); // adds employees to table on "submit" click
     $('#submitButton').on('click', compileSalary); // figures salary to "Monthly Total" on click
-    // $('#deleteButton').on('click', '.delete', removeEmployeeStats); // deletes employee
-    $('#deleteButton').on('click', '.delete', compileSalary); // recompiles for removed employee
 
 };
 
@@ -30,9 +28,13 @@ function addEmployees() { // gets values from input boxes
     <td>${lastName}</td>
     <td class="id">${id}</td>
     <td>${title}</td>
-    <td>${salary}</td>`);
+    <td>${salary}</td>
+    <td><button class="delete">Delete</button></td></tr>`);
     $('.tableBody').append(employeeStats);
-
+    $('.deleteButton').off('click');
+    $('.deleteButton').on('click', '.delete', removeEmployeeStats); // deletes employee
+    $('.deleteButton').on('click', '.delete', compileSalary); // recompiles for removed employee
+    
     let newEmployee = {
         firstName: firstName,
         lastName: lastName,
@@ -49,22 +51,33 @@ function addEmployees() { // gets values from input boxes
     $('#salary').val('');
 
 }
-
-let monthlySalary = 0;
 function compileSalary() {
     let employeeArray = employees;
+    let monthlySalary = 0;
 
     for (let i = 0; i < employeeArray.length; i++) {
         monthlySalary += Number(employeeArray[i].salary)
     }
     monthlySalary /= 12;
+    $("#monthlyTotal").empty();
     $("#monthlyTotal").append((monthlySalary));
-    function red() {
-        if (monthlySalary >= 20000); {
-            $(".monthlyTotal").css("background-color", "red");
+        if (monthlySalary >= 20000) {
+            $(".monthlyTotal").addClass("overBudget");
+            console.log(monthlySalary);
+        
+    }
+}
+
+function removeEmployeeStats() {
+    for (i = 0; i < employeeArray.length; i++) {
+        if (employeeArray[i].id == id) {
+            employees.splice(i, 1);
         }
     }
 }
+
+
+
 
 
 
@@ -78,7 +91,7 @@ for (let i = 0; i < salaryArray.length; i++); { // loops through salaries
     monthlySalary /= 12; // divides annual salary by 12
 }
 
-$("h3").remove;
+
 $("#monthlyTotal").append("<h3>Monthly Salary Total: $ </h3>");
  if (monthlyTotal >= 20000) {
     ("h3").css("background-color", "red"); // sets background to red if monthly costs exceed $20,000
