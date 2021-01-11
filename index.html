@@ -7,18 +7,34 @@
     <script src="scripts/jQuery.js"></script> <!-- set before client.js -->
     <script src="scripts/client.js" charset="utf-8"></script> <!-- set after jQuery.js -->
   </head>
+
   <body>
     <main>
       <div class="container">
         <h1> Salary Calculator</h1>
-        <h4 class="addEmployee">Add Employee</h4>
-          <div class="inputfield"> 
+        <h2 class="addEmployee">Add Employee</h4>
+          <div class="inputField"> 
             <input id="firstName" type="text" placeholder="First Name">
             <input id="lastName" type="text" placeholder="Last Name">
             <input id="id" type="number" min="0" placeholder="ID">
             <input id="title" type="text" placeholder="Title">
+            <input id="salary" type="number" min="0" placeholder="Annual Salary">
+            <input id="submitButton" type="button" value="Submit">
+            </div>
           </div>
-      </div>
+        </div>
+        <h3 class="Employees">Employees</h3>
+        <table>
+          <thead>
+            <tr>
+              <th class="firstName">First Name</th>
+              <th class="lastName">Last Name</th>
+              <th class="id">ID</th>
+              <th class="title">Title</th>
+              <th class="annualSalary">Annual Salary</th>
+            </tr>
+          </thead>
+        </table>
     </main>
   </body>
 </html>
@@ -26,21 +42,3 @@
 
 
 
-<table class="styled-table">
-  <thead>
-    <tr>
-      <th class="firstName" First Name>
-      <th class="lastName" Last Name>
-      <th class="id" ID>
-      <th class="title" Title>
-      <th class="annualSalary"Annual Salary>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class ="active-row">
-      <td>Employees</td>
-      <td></td>
-    </tr>
-  </tbody>
-</table><button class="btn">Submit</button>
