@@ -58,8 +58,10 @@ function addEmployees() { // gets values from input boxes
             monthlySalary += Number(employeeArray[i].salary)
         }
         monthlySalary /= 12;
-       
         $("#monthlyTotal").append((monthlySalary));
+            if (monthlySalary >= "20000"); {
+            $("h3").css("background-color", "red"); // sets background to red if monthly costs exceed $20,000
+        }
     }
 
     function removeEmployeeStats(array, id) {
