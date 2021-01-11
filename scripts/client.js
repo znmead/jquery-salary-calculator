@@ -30,7 +30,7 @@ function addEmployees() { // gets values from input boxes
         title: title,
         salary: salary,
     }
-    employees.push(employees);
+    employees.push(newEmployee);
     
 
     $('#firstName').val(''); // clears fields after input submission
@@ -51,7 +51,7 @@ function compileSalary() { // compiles monthly salary
 
     monthlySalary /= 12; // divides annual salary by 12
     $("h3").remove();
-    $(".monthlyTotal").append("<h3>Monthly Salary Total:");
+    $(".monthlyTotal").append("<h3>Monthly Salary Total: $");
 
     if (monthlySalary >= 20000) {
         ("h3")
