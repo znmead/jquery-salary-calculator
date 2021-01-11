@@ -1,9 +1,31 @@
 # Project Name
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+jQuery Salary Calculator
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+Created a salary calculator that takes in new employees and compiles monthly salary costs. 
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+### Installation 
+
+Nothing required, use the console to verify functionality.
+
+#### Usage
+
+- Add new employees via the open fields and click "Submit". 
+
+- Modify via the "delete" button. 
+
+
+
+##### Built With
+
+HTML, CSS, jQuery, JavaScript
+
+###### Acknowledgement
+
+Thanks to Emerging Digital Academy, and especially Blaine and Mary, for giving me the knowledge and skills to create this application!
+
+###### Support
+
+Please contact me at zachary.n.mead@gmail.com with suggestions or issues. 
