@@ -10,7 +10,18 @@ let employees = [];
 let index = 0; 
 let monthlyTotal= "$" + 0; 
 
+function addEmployee() {
+    let firstName = $("#firstName").val();
+    let lastname = $("#lastName").val();
+    let id = $("#id").val();
+    let title = $("#title").val();
+    let salary = $("#salary").val();
 
+    let employeeStats = $(`<tr><th>${firstName}`);
+    $('tableBody').append(addEmployee);
+
+
+}
 
 
 
