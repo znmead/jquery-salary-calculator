@@ -4,11 +4,13 @@ $(document).ready(readyNow);
 function readyNow() {
     $('#submitButton').on('click', addEmployees); // adds employees to table on "submit" click
     $('#submitButton').on('click', compileSalary); // figures salary to "Monthly Total" on click
+    $('table').on('click', '.delete', removeEmployeeStats); // deletes employee
+    $('table').on('click', '.delete', compileSalary); // recompiles for removed employee
 
 };
 
 let employees = [];
-let index = 0; 
+let i = 0; 
 let monthlyTotal= "$" + 0; 
 
 function addEmployees() { // gets values from input boxes
@@ -29,7 +31,7 @@ function addEmployees() { // gets values from input boxes
         title: title,
         salary: salary,
     }
-    employees.push(newEmployee);
+    employees.push(employees);
 
     $('#firstName').val(''); // clears fields after input submission
     $('#lastName').val('');
@@ -43,7 +45,7 @@ function compileSalary() { // compiles monthly salary
     let monthlySalary = 0;
     let salaryArray = employees;
     
-    for (let i = 0; i < salaryArray.length. i++); { // loops through salaries
+    for (let i = 0; i < salaryArray.length; i++); { // loops through salaries
         monthlySalary += Number(salaryArray[i].salary);
     }
 
@@ -65,9 +67,3 @@ function removeEmployeeStats(array, id) {
     }
 }
 
-function deleteEmployee () {
-    let id = $(this).parent().siblings(".employeeID").text();
-    removeEmployeeStats(employees, id);
-    $(this).closest('tr').remove();
-    
-}
