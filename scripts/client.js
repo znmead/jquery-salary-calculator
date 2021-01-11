@@ -12,6 +12,7 @@ function readyNow() {
 let employees = [];
 let i = 0; 
 
+
 function addEmployees() { // gets values from input boxes
     let firstName = $('#firstName').val(); // sets employee stats 
     let lastName = $("#lastName").val();
@@ -49,24 +50,19 @@ function addEmployees() { // gets values from input boxes
 
 }
 
-function compileSalary() { // compiles monthly salary
     let monthlySalary = 0;
-    let salaryArray = employees;
+    function compileSalary() {
+        let employeeArray = employees;
 
-    for (let i = 0; i < salaryArray.length; i++); { // loops through salaries
-        monthlySalary += Number(salaryArray[i].salary);
-    }
-    $("h3").remove();
-    $("#monthlyTotal").append("<h3>Monthly Salary Total: $");
-
-    monthlySalary /= 12; // divides annual salary by 12
-     if (employees.salary >= 20000) {
-        ("h3").css("background-color", "red"); // sets background to red if monthly costs exceed $20,000
+        for(let i = 0; i < employeeArray.length; i++) {
+            monthlySalary += Number(employeeArray[i].salary)
+        }
+        monthlySalary /= 12;
+       
+        $("#monthlyTotal").append((monthlySalary));
     }
 
-}
-
-function removeEmployeeStats(array, id) {
+    function removeEmployeeStats(array, id) {
     for (let i = 0; i < array.length; i++) {
         if (array[i].id === id) {
             employees.splice(i, 1);
@@ -74,4 +70,18 @@ function removeEmployeeStats(array, id) {
     }
 }
 
-// 
+/* let monthlySalary = 0;
+let salaryArray = employees;
+
+for (let i = 0; i < salaryArray.length; i++); { // loops through salaries
+    monthlySalary += Number(salaryArray[i].salary);
+    monthlySalary /= 12; // divides annual salary by 12
+}
+
+$("h3").remove;
+$("#monthlyTotal").append("<h3>Monthly Salary Total: $ </h3>");
+ if (monthlyTotal >= 20000) {
+    ("h3").css("background-color", "red"); // sets background to red if monthly costs exceed $20,000
+}
+
+} */ 
