@@ -12,11 +12,11 @@ let monthlyTotal= "$" + 0;
 
 function addEmployees() { // gets values from input boxes
     let firstName = $('#firstName').val(); // sets employee stats 
-    let lastname = $("#lastName").val();
+    let lastName = $("#lastName").val();
     let id = $("#id").val();
     let title = $("#title").val();
     let salary = $("#salary").val();
-    }   
+    
 
     let employeeStats = $(`<tr><td>${firstName}</td><td>${lastName}</td><td class="id">${id}</td><td>${title}</td><td>button>Delete</td></tr>`);
     $('tableBody').append(employeeStats);
@@ -36,10 +36,4 @@ function addEmployees() { // gets values from input boxes
     $('#title').val('');
     $('#salary').val('');
 
-
-
-
-
-
-// $('table').on('click', deleteEmployee);
-// $('table').on('click', compileSalary);
+}
