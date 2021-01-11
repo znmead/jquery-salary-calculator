@@ -4,7 +4,7 @@ $(document).ready(readyNow);
 function readyNow() {
     $('#submitButton').on('click', addEmployees); // adds employees to table on "submit" click
     $('#submitButton').on('click', compileSalary); // figures salary to "Monthly Total" on click
-    $('#deletButton').on('click', '.delete', removeEmployeeStats); // deletes employee
+    $('#deleteButton').on('click', '.delete', removeEmployeeStats); // deletes employee
     $('#deleteButton').on('click', '.delete', compileSalary); // recompiles for removed employee
 
 };
@@ -24,9 +24,13 @@ function addEmployees() { // gets values from input boxes
         return null;
     }
     
-    let employeeStats = $(`<tr><td>${firstName}</td><td>${lastName}</td><td class="id">${id}</td><td>${title}</td><td>${salary}</td></tr>`);
+    let employeeStats = $(`
+    <tr><td>${firstName}</td>
+    <td>${lastName}</td>
+    <td class="id">${id}</td>
+    <td>${title}</td
+    ><td>${salary}</td></tr>`);
     $('.tableBody').append(employeeStats);
-
 
     let newEmployee = {
         firstName: firstName,
@@ -37,7 +41,6 @@ function addEmployees() { // gets values from input boxes
     }
     employees.push(newEmployee);
     
-
     $('#firstName').val(''); // clears fields after input submission
     $('#lastName').val('');
     $('#id').val('');
@@ -49,18 +52,18 @@ function addEmployees() { // gets values from input boxes
 function compileSalary() { // compiles monthly salary
     let monthlySalary = 0;
     let salaryArray = employees;
-    
+
     for (let i = 0; i < salaryArray.length; i++); { // loops through salaries
         monthlySalary += Number(salaryArray[i].salary);
     }
+    $("h3").remove();
+    $("#monthlyTotal").append("<h3>Monthly Salary Total: $", compileSalary());
 
     monthlySalary /= 12; // divides annual salary by 12
-    $("h3").remove();
-    $(".monthlyTotal").append("<h3>Monthly Salary Total: $" + compileSalary());
-
-    if (monthlySalary >= 20000) {
+     if (monthlyTotal >= 20000) {
         ("h3").css("background-color", "red"); // sets background to red if monthly costs exceed $20,000
     }
+
 }
 
 function removeEmployeeStats(array, id) {
