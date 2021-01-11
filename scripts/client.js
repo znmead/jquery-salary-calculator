@@ -20,7 +20,7 @@ function addEmployees() { // gets values from input boxes
     let title = $("#title").val();
     let salary = $("#salary").val();
     
-    let employeeStats = $(`<tr><td>${firstName}</td><td>${lastName}</td><td class="id">${id}</td><td>${title}</td><td>button>Delete</td></tr>`);
+    let employeeStats = $(`<tr><td>${firstName}</td><td>${lastName}</td><td class="id">${id}</td><td>${title}</td><td>${salary}</td></tr>`);
     $('.tableBody').append(employeeStats);
 
     let newEmployee = {
