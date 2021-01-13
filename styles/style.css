@@ -2,10 +2,12 @@ body {
     background-color: #FE53BB;
 }
 
-table, th, td {
+table,
+th,
+td {
     border: 2px solid black;
 }
 
 .overBudget {
-    background-color: red; 
+    background-color: red;
 }

@@ -18,24 +18,24 @@ function addEmployees() { // gets values from input boxes
     let title = $("#title").val();
     let salary = $("#salary").val();
 
-    if (!firstName || !lastName || !id || !title || !salary) {
+    if (!firstName || !lastName || !id || !title || !salary) { // validates all input fields have values entered
         prompt("Please complete all input sections");
-        return null;
+        return;
     }
 
     let employeeStats = $(`
-    <tr><td>${firstName}</td>
+    <tr><td>${firstName}</td> 
     <td>${lastName}</td>
     <td class="id">${id}</td>
     <td>${title}</td>
     <td>${salary}</td>
     <td><button class="delete">Delete</button></td></tr>`);
     $('.tableBody').append(employeeStats);
-    $('.deleteButton').off('click'),
-        $('#employeeTable').on('click', '.delete', deleteRow); // deletes employee
+    $('.deleteButton').off('click');
+    $('#employeeTable').on('click', '.delete', deleteRow); // deletes employee
     // $('#employeeTable').on('click', '.delete', compileSalary); // recompiles for removed employee
 
-    let newEmployee = {
+    let newEmployee = { // creates newEmployee object
         firstName: firstName,
         lastName: lastName,
         id: id,
