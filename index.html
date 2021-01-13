@@ -1,58 +1,52 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>jQuery Salary Calulator</title>
-    <link rel="stylesheet" href="styles/style.css"> <!-- links to style.css -->
-    <script src="scripts/jQuery.js"></script> <!-- set before client.js -->
-    <script src="scripts/client.js" charset="utf-8"></script> <!-- set after jQuery.js -->
-  </head>
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- links to style.css -->
+    <script src="scripts/jQuery.js"></script>
+    <!-- set before client.js -->
+    <script src="scripts/client.js" charset="utf-8"></script>
+    <!-- set after jQuery.js -->
+</head>
 
-  <body>
+<body>
     <main>
-      <div class="container">
-        <h1> Salary Calculator</h1>
-        <h2 class="addEmployee">Add Employee</h4>
-          <div class="inputField"> 
-            <input id="firstName" type="text" placeholder="First Name">
-            <input id="lastName" type="text" placeholder="Last Name">
-            <input id="id" type="number" min="0" placeholder="ID">
-            <input id="title" type="text" placeholder="Title">
-            <input id="salary" type="number" min="0" placeholder="Annual Salary">
-            <button id="submitButton" class="submitButton">Submit</button>
-            </div>
-          </div>
+        <div class="container">
+            <h1> Salary Calculator</h1>
+            <h2 class="addEmployee">Add Employee</h4>
+                <div class="inputField">
+                    <input id="firstName" type="text" placeholder="First Name">
+                    <input id="lastName" type="text" placeholder="Last Name">
+                    <input id="id" type="number" min="0" placeholder="ID">
+                    <input id="title" type="text" placeholder="Title">
+                    <input id="salary" type="number" min="0" placeholder="Annual Salary">
+                    <button id="submitButton" class="submitButton">Submit</button>
+                </div>
+        </div>
         </div>
         <h3 class="Employees">Employees</h3>
-        <table>
-          <thead>
-            <tr>
-              <th class="firstName">First Name</th>
-              <th class="lastName">Last Name</th>
-              <th class="id">ID</th>
-              <th class="title">Title</th>
-              <th class="annualSalary">Annual Salary</th>
-              <th class="deleteEmployee">Delete Employee</th>
-            </tr>
-          </thead>
-          <tbody class="tableBody"> 
-          </tbody>
-          <tfoot id="footer">
-            <td class="footer"></td>
-            <td class="footer"></td>
-            <td class="footer"></td>
-            <td class="footer"></td>
-            <td class="footer"></td>
-            <td class="footer"><button class="delete">Delete</button></td>
-          </tfoot>
+        <table id="employeeTable">
+            <thead>
+                <tr>
+                    <th class="firstName">First Name</th>
+                    <th class="lastName">Last Name</th>
+                    <th class="id">ID</th>
+                    <th class="title">Title</th>
+                    <th class="annualSalary">Annual Salary</th>
+                    <th class="deleteEmployee">Delete Employee</th>
+                </tr>
+            </thead>
+            <tbody class="tableBody ">
+
+            </tbody>
         </table>
-        <div> 
-          <h3 class="monthlyTotal">Monthly Salary Total: $<span id="monthlyTotal"></span></h3>
+        <div>
+            <h3 class="monthlyTotal">Monthly Salary Total: $<span id="monthlyTotal">0</span></h3>
         </div>
     </main>
-  </body>
+</body>
+
 </html>
-
-
-
-
